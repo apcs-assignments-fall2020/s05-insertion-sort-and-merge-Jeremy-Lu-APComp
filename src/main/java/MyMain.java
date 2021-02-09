@@ -37,9 +37,11 @@ public class MyMain {
     return combined;
     */
     int[] output_array = new int[arr1.length + arr2.length];
-    int length = arr1.length;
-    for (i = 0; i < length; i++){
+    int length_1 = arr1.length;
+    int length_2 = arr2.length;
+    for (int i = 0; i < length_1; i++){
         int var_1 = arr1[i];
+    for (int a = 0; a < length_2; a++){
         int var_2 = arr2[i];
         if(var_1>var_2){
             output_array[i] = var_2;
@@ -47,6 +49,7 @@ public class MyMain {
         else if(var_2>var_1){
             output_array[i] = var_1;
         }
+    }
     }
 }
 
