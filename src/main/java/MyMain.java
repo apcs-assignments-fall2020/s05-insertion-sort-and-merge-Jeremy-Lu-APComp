@@ -14,7 +14,8 @@ public class MyMain {
      // Merges two sorted arrays into one large combined
      // sorted array
      // You may assume arr1 and arr2 are the same length
-    public static int[] merge(int[] arr1, int[] arr2) { 
+    public static int[] merge(int[] arr1, int[] arr2) {
+    /*
         int[] combined = new int[arr1.length + arr2.length];
         int arraypos = 0;
         int arraypos_2 = 0;
@@ -34,6 +35,19 @@ public class MyMain {
             combined[mergedpos+=1] = arr2[arraypos_2+=1];
         }
     return combined;
+    */
+    int[] output_array = new int[arr1.length + arr2.length];
+    int length = arr1.length;
+    for (i = 0; i < length; i++){
+        int var_1 = arr1[i];
+        int var_2 = arr2[i];
+        if(var_1>var_2){
+            output_array[i] = var_2;
+        }
+        else if(var_2>var_1){
+            output_array[i] = var_1;
+        }
+    }
 }
 
     public static void main(String[] args) {
