@@ -1,41 +1,40 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 public class MyMain {
-
+    /*
+    Create a new ArrayList (this will be the sorted output list)
+    Loop through the original list:
+    Get the next element that you are inserting
+    Find the index that this element should be inserted at (you can find this by looping through the output list; 
+    the element should be inserted before the first number in the output list that is larger than it)
+    Insert the element at this index
+    Return the output list
+    */
     // Sorts the ArrayList using insertion sort
     public static ArrayList<Integer> insertionSort(ArrayList<Integer> list) {
-        ArrayList <String> output_array = new ArrayList<String>();
-        for(int i = 0; i < list.size(); i++){
-            
+        ArrayList <Integer> output_array = new ArrayList<Integer>();
+        int i, j;
+        i = j = 0;
+        while(i < list.size() && j < output_array.size()){
+            int next_element = list.get(i+1);
+            int outputarray_index = output_array.get(j);
+            if(next_element<outputarray_index){
+                break;
+            }
+            else if(next_element<outputarray_index){
+                output_array.add(j, next_element);
+            }
+            else{
+                output_array.add(j, next_element);
+            }
         }
-        return null;
+        return output_array;
     }
 
      // Merges two sorted arrays into one large combined
      // sorted array
      // You may assume arr1 and arr2 are the same length
     public static int[] merge(int[] arr1, int[] arr2) {
-    /*
-        int[] combined = new int[arr1.length + arr2.length];
-        int arraypos = 0;
-        int arraypos_2 = 0;
-        int mergedpos = 0;
-    while(arraypos < arr1.length && arraypos_2 < arr2.length) {
-        if (arr1[arraypos] < arr2[arraypos_2]) {
-            combined[mergedpos+=1] = arr1[arraypos+=1];
-        } 
-        else {
-            combined[mergedpos+=1] = arr2[arraypos_2+=1];
-        }
-    }
-    while (arraypos < arr1.length) {
-            combined[mergedpos+=1] = arr1[arraypos+=1];
-        }
-    while (arraypos_2 < arr2.length) {
-            combined[mergedpos+=1] = arr2[arraypos_2+=1];
-        }
-    return combined;
-    */
     int[] output_array = new int[arr1.length + arr2.length];
     int length_1 = arr1.length;
     int length_2 = arr2.length;
@@ -69,6 +68,13 @@ public class MyMain {
     public static void main(String[] args) {
         int[] one = { 3, 7, 10 };
         int[] two = { 4, 8, 11 };
+        ArrayList <Integer> sample_array = new ArrayList<Integer>();
+        sample_array.add(2);
+        sample_array.add(5);
+        sample_array.add(1);
+        sample_array.add(11);
+        sample_array.add(3);
         System.out.println(Arrays.toString(merge(one, two)));
+        System.out.println(insertionSort(sample_array));
     }
 }
